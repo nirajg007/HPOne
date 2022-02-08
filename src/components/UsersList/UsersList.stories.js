@@ -1,5 +1,5 @@
 import React from 'react';
-import UsersListComponent from '../components/UsersListComponent';
+import UsersListComponent from './UsersListComponent';
 
 export default {
   title: 'HPOneComponent/UsersList',

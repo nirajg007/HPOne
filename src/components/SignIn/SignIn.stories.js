@@ -1,5 +1,5 @@
 import React from 'react';
-import SignInComponent from '../components/SignInComponent';
+import SignInComponent from './SignInComponent';
 
 export default {
   title: 'HPOneComponent/SignIn',

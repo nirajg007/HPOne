@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useSelector, useDispatch } from 'react-redux';
-import { getUsers } from '../redux/actions/users';
+import { getUsers } from '../../redux/actions/users';
 
 const UsersListComponent = (props) => {
-    const {pageSize,rowsPerPageOptions,checkboxSelection} = props
+
+    const { pageSize, rowsPerPageOptions, checkboxSelection } = props
     const dispatch = useDispatch();
     const users = useSelector(state => state.users.users);
-    const loading = useSelector(state => state.users.loading);
-    const error = useSelector(state => state.users.error);
     const columns = [
         { field: 'id', headerName: 'ID', width: 130 },
         { field: 'name', headerName: 'Name', width: 130 },
@@ -28,8 +27,11 @@ const UsersListComponent = (props) => {
     ];
 
     useEffect(() => {
-        dispatch(getUsers());
 
+        function getUsersList() {
+            dispatch(getUsers());
+        }
+        getUsersList()
     }, [])
     return (
         <div style={{ height: 400, width: '100%' }}>
